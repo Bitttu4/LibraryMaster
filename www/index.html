@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Library Management System</h1>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-section="search">Search Books</a></li>
+                <li><a href="#" class="nav-link" data-section="add">Add Book</a></li>
+                <li><a href="#" class="nav-link" data-section="all">View All Books</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <!-- Search Books Section -->
+            <section id="search" class="active">
+                <h2>Search Books</h2>
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="search-type">Search By:</label>
+                        <select id="search-type" name="search-type">
+                            <option value="title">Title</option>
+                            <option value="author">Author</option>
+                            <option value="year">Publication Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="search-query">Search Term:</label>
+                        <input type="text" id="search-query" name="search-query" placeholder="Enter search term...">
+                    </div>
+                    <button id="search-button" class="btn primary">Search</button>
+                </div>
+                
+                <div id="search-results" class="results">
+                    <h3>Search Results</h3>
+                    <div id="results-container" class="book-list">
+                        <!-- Search results will be displayed here -->
+                        <p class="empty-state">Search for books to see results.</p>
+                    </div>
+                </div>
+                
+                <div id="no-results" class="no-results hidden">
+                    <p>No books found matching your search criteria.</p>
+                    <button id="add-from-search" class="btn secondary">Add a New Book</button>
+                </div>
+            </section>
+            
+            <!-- Add Book Section -->
+            <section id="add">
+                <h2>Add New Book</h2>
+                <form id="add-book-form" class="book-form">
+                    <div class="form-group">
+                        <label for="book-title">Book Title:</label>
+                        <input type="text" id="book-title" name="title" required placeholder="Enter book title">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">Author:</label>
+                        <input type="text" id="book-author" name="author" required placeholder="Enter author name">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-year">Publication Year:</label>
+                        <input type="number" id="book-year" name="year" required min="1000" max="9999" placeholder="Enter publication year">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-quantity">Quantity Available:</label>
+                        <input type="number" id="book-quantity" name="quantity" required min="1" placeholder="Enter quantity available">
+                    </div>
+                    <button type="submit" class="btn primary">Add Book</button>
+                    <div id="add-message" class="message hidden"></div>
+                </form>
+            </section>
+            
+            <!-- View All Books Section -->
+            <section id="all">
+                <h2>All Books</h2>
+                <button id="refresh-books" class="btn secondary">Refresh</button>
+                <div id="all-books" class="book-list">
+                    <!-- All books will be displayed here -->
+                    <p class="loading">Loading books...</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Library Management System</p>
+        </footer>
+    </div>
+    
+    <!-- Book Details Modal -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Book Details</h2>
+            <div id="modal-content" class="book-details">
+                <!-- Book details will be displayed here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
