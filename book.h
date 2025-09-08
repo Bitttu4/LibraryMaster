@@ -4,7 +4,7 @@
 #include <string>
 
 class Book {
-private:
+private: // this cannot be access by the non-member funtion of class.
     std::string title;
     std::string author;
     int year;
@@ -20,7 +20,7 @@ public:
     // Getters
     std::string getTitle() const;
     std::string getAuthor() const;
-    int getYear() const;
+    int getYear() const; 
     int getQuantity() const;
     
     // Setters

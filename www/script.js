@@ -1,3 +1,16 @@
+// LibraryMaster - JavaScript for managing book library
+// This script handles navigation, searching, adding books, and displaying book details
+// Ensure the DOM is fully loaded before executing the script
+if (typeof document === 'undefined') {
+    throw new Error('This script must be run in a browser environment.');
+}
+if (typeof fetch === 'undefined') {
+    throw new Error('Fetch API is required for this script to work. Please use a modern browser.');
+}
+// Ensure the DOM is fully loaded before executing the script
+if (typeof document === 'undefined') {
+    throw new Error('This script must be run in a browser environment.');
+}
 document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements
     const navLinks = document.querySelectorAll('.nav-link');

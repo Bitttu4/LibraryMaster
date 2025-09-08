@@ -6,7 +6,7 @@
 
 // Constructor
 Library::Library(const std::string& dataFile) : dataFile(dataFile) {
-    loadBooks();
+    loadBooks(); // Load books from file and initialize the library
 }
 
 // Load books from file
@@ -18,7 +18,6 @@ bool Library::loadBooks() {
     
     books.clear();
     std::string line;
-    
     while (std::getline(file, line)) {
         if (!line.empty()) {
             books.push_back(Book::fromString(line));
